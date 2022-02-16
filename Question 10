@@ -1,0 +1,20 @@
+import statistics
+
+student_score = input("Enter your student count followed by student scores separated by space: ")
+score_list = student_score.split(" ")
+total_students = int(score_list[0])
+scores_str = score_list
+del scores_str[0]
+all_scores_int = []
+for score in range(total_students):
+  score_int = int(scores_str[score])
+  all_scores_int.append(score_int)
+
+avg_score = statistics.mean(all_scores_int)
+above_avg = 0
+for score in range(total_students):
+  if all_scores_int[score] > avg_score:
+    above_avg += 1
+
+pct_abv_avg = ((above_avg / total_students)*100)
+print(("%s%%"%(format(pct_abv_avg,".3f"))))
