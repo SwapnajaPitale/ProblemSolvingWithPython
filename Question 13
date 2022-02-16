@@ -1,0 +1,32 @@
+firstClass = [{'name':"Bob", 'grade':94}, {'name':"Boe", 'grade':93}, {'name':"Vaa", 'grade':92}, {'name':"Vre", 'grade':91}, {'name':"Toe", 'grade':94}]
+secondClass = [{'name':"Dan", 'grade':64}, {'name':"Don", 'grade':63}, {'name':"Tim", 'grade':76}, {'name':"Tom", 'grade':61}, {'name':"Sebastian Jr.", 'grade':74}]
+
+firstClassGrades = []
+for i in firstClass:
+  firstClassGrades.append(i["grade"])
+
+secondClassGrades = []
+for i in secondClass:
+  secondClassGrades.append(i["grade"])
+
+firstClassMaxGrade = max(firstClassGrades)
+secondClassMaxGrade = max(secondClassGrades)
+
+finalList=[]
+
+if firstClassMaxGrade> 75:
+  for i in firstClass:
+    currentScore = i["grade"]
+    if currentScore == firstClassMaxGrade:
+      finalList.append(i['name'])
+    
+if secondClassMaxGrade> 75:
+  for i in secondClass:
+    currentScore = i["grade"]
+    if currentScore == secondClassMaxGrade:
+      finalList.append(i['name'])
+
+if len(finalList)<1:
+  print("No one gets a reward.")
+else:
+  print(finalList)
