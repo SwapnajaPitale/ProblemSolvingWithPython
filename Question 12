@@ -1,0 +1,24 @@
+word_input = input("Enter a word: ").upper()
+all_freq = {} 
+for i in word_input:
+    if i in all_freq:
+        all_freq[i] += 1
+    else:
+        all_freq[i] = 1
+
+t_key = list(all_freq.keys())
+t_value = list(all_freq.values())
+
+big_num = max(t_value)
+t_value_index = t_value.index(big_num)
+max_char = t_key[t_value_index]
+
+more_than1 = []
+for i in t_value:
+  if i==big_num:
+    more_than1.append(i)
+
+if len(more_than1)>1:
+  print("?") 
+else:
+  print(max_char)
