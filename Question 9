@@ -1,0 +1,25 @@
+withdrawal_amt = int(input("Enter withdrawal amount in multiples of 5: "))
+while int(withdrawal_amt) <= 0:
+  print("Withdrawal amount is not valid. Valid amount is above 0 and a multiple of 5")
+  withdrawal_amt = int(input("Enter withdrawal amount: "))
+
+initial_balance = int(input("What is your account balance? "))
+while int(initial_balance) <0:
+  initial_balance = int(input("Account balance cannot be negative. Try again: "))
+
+def successful_withdrawal():
+  if withdrawal_amt%5 != 0:
+    withdrawal_amt_new = -1
+  else:
+    withdrawal_amt_new = withdrawal_amt
+  
+  if initial_balance - withdrawal_amt_new - 1 >= 0:
+    final_balance = (initial_balance - withdrawal_amt_new - 1)
+    return final_balance
+  else:
+    final_balance = initial_balance
+    print("Sorry, You do not have enough cash balance in the account to complete the transaction")
+    return final_balance
+    
+final_output = successful_withdrawal()
+print("Your account balance is $" + str(final_output))
