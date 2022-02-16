@@ -1,0 +1,26 @@
+print("Enter numbers greater than 0 and less than 1000") 
+input_count = 0
+input_limit = 3
+number_list = []
+
+while input_count < input_limit:
+  number = int(input('Input number: '))
+  input_count+=1
+  number_list.append(number)
+  if number <= 0:
+    print("Error! Number should be greater than zero..Try again!")
+    input_count-=1
+    number_list.pop()
+  elif number >1000:
+    print("Error! Number should be less than 1000..Try again!")
+    input_count-=1
+    number_list.pop()
+# print(number_list)
+product_of_num_list = number_list[0] * number_list[1] * number_list[2]
+# print("Product of these numbers: " + str(product_of_num_list))
+
+product_list = [int(num) for num in str(product_of_num_list)]
+output1 = []
+for i in range(10):
+  output1.append(product_list.count(i))
+print(output1)
