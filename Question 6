@@ -1,0 +1,25 @@
+time_to_wake = input("Enter your ideal wake-up time separated by space (hh mm): ")
+tim_alarm = time_to_wake.split(" ")
+tim_alarm_hh = int(tim_alarm[0])
+tim_alarm_mm = int(tim_alarm[1])
+
+while tim_alarm_hh <0 or tim_alarm_hh > 23 or tim_alarm_mm < 0 or tim_alarm_mm > 59:
+  print("The hour value must be between 0 and 23 and minute value must be between 0 and 59")
+  time_to_wake = input("Enter your ideal wake-up time separated by space (hh mm): ")
+  tim_alarm = time_to_wake.split(" ")
+  tim_alarm_hh = int(tim_alarm[0])
+  tim_alarm_mm = int(tim_alarm[1])
+
+min_minus = 35
+min_value = tim_alarm_mm - min_minus
+if min_value < 0:
+  hr_value = tim_alarm_hh - 1
+  new_min_value = 60 + min_value
+  if hr_value < 0:
+    new_hr_value = 23
+  else:
+    new_hr_value = hr_value
+else:
+  new_min_value = min_value
+
+print(str(new_hr_value) + " " + str(new_min_value))
