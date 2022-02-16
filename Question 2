@@ -1,0 +1,10 @@
+user_input_list = []
+user_input = int(input("Enter an integer: "))
+while(user_input<=0):
+  user_input = int(input("Invalid entry. Value must be positive. Try again: "))
+
+user_input_list = [int(num) for num in str(user_input)]
+user_input_list.sort(reverse = True)
+
+for i in user_input_list:
+  print(i)
