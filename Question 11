@@ -1,0 +1,27 @@
+dice_game = input("Enter 3 numbers separated by space: ")
+die_value = dice_game.split(" ")
+die1 = int(die_value[0])
+die2 = int(die_value[1])
+die3 = int(die_value[2])
+
+while die1 <1 or die1 >6 or die2 <1 or die2 >6 or die3 <1 or die3 >6:
+  print("Please enter valid die values between 1 and 6")
+  dice_game = input("Enter 3 numbers separated by space: ")
+  die_value = dice_game.split(" ")
+  die1 = int(die_value[0])
+  die2 = int(die_value[1])
+  die3 = int(die_value[2])
+die_list = [die1, die2, die3]
+
+if die1 == die2 and die2 == die3:
+  cash_prize = die1*10 + 100
+elif die1 == die2:
+  cash_prize = 10 + die1
+elif die2 == die3:
+  cash_prize = 10 + die2
+elif die1 == die3:
+  cash_prize = 10 + die3
+else:
+  cash_prize = max(die_list)
+
+print(cash_prize)
