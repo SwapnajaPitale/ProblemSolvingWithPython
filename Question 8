@@ -1,0 +1,29 @@
+year_list = [[1, 31], [2, 29], [3, 31], [4, 30], [5, 31], [6, 30], [7, 31], [8, 31], [9, 30], [10, 31], [11, 30], [12, 31]]
+
+month = int(input("Enter month: "))
+while month<1 or month>12:
+  month = int(input("Invalid Input, Please enter month again: "))
+
+day = int(input("Enter date: "))
+while day < 1 or day > int(year_list[month-1][1]):
+  day = int(input("Invalid Input, Please enter date again: "))
+
+total_days = day
+for item in range(month-1):
+  add_day = year_list[item][1]
+  total_days += add_day
+
+if total_days%7 == 0:
+  print("MON")
+elif total_days%7 == 1:
+  print("TUE")
+elif total_days%7 == 2:
+  print("WED")
+elif total_days%7 == 3:
+  print("THU")
+elif total_days%7 == 4:
+  print("FRI")
+elif total_days%7 == 5:
+  print("SAT")
+else:
+  print("SUN")
