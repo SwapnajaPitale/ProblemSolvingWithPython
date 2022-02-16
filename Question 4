@@ -1,0 +1,11 @@
+print("Input 3 numbers")
+input_count = 0
+input_limit = 3
+number_list = []
+
+while input_count < input_limit:
+  number = int(input('Input number: '))
+  input_count+=1
+  number_list.append(number)
+max_abs = max((number_list), key=abs)
+print(max_abs)
