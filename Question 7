@@ -1,0 +1,17 @@
+driving_speed = int(input("What was your driving speed? "))
+is_birthday = input("Is today your birthday?(True or False) ")
+
+if is_birthday == "True":
+  if driving_speed > 105:
+    print(2)
+  elif driving_speed > 85:
+    print(1)
+  else:
+    print(0)
+else:
+  if driving_speed > 100:
+    print(2)
+  elif driving_speed > 80:
+    print(1)
+  else:
+    print(0)
